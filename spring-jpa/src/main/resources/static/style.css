@@ -1,0 +1,28 @@
+.indexStyle {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    color: white;
+    background: darkgray;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+.candleStyle {
+    text-align: center;
+    margin-right: auto;
+    margin-left: auto;
+    color: white;
+    background: darkgray;
+    padding: 3em;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+h1 {
+    color: red;
+}
+
+p {
+    font-size: large;
+    margin-top: 0;
+    margin-bottom: 0;
+}

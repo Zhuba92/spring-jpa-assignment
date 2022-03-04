@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: black">
+<div class="candleStyle">
+    <div>
+        <tr>
+            <td>
+                <h2>Name: </h2><span th:text="${candle.name}">NAME</span><br>
+                <h2>Price: </h2><span th:text="'$'+${candle.price}">PRICE</span><br>
+                <h2>Available: </h2><span th:text="${candle.quantity}">QUANTITY</span><br>
+                <form method="post" th:object="${candle}"
+                      th:action="@{/buy-candle}"><br>
+                    <label for="search">How many would you like?</label>
+                    <input type="number" min="0" th:max="${candle.quantity}" id="search" name="amount" autofocus th:value="${amount}">
+                    <input type="hidden" name="id" th:value="*{id}" />
+                    <input type="submit" value="Order">
+                </form>
+                <br>
+                <br>
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <span th:text="${candle.description}">DESCRIPTION</span>
+            </td>
+        </tr>
+    </div>
+</div>
+</body>
+</html>

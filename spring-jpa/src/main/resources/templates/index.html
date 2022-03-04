@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" th:href="@{/style.css}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+</head>
+<body style="background-color: black">
+<div class="indexStyle">
+    <h1>Buy Candles!</h1>
+
+    <div th:each="candle : ${candles}">
+        <a th:href="@{'/candles/'+${candle.name}}">
+            <h3 th:text="${candle.name}">NAME</h3>
+        </a>
+        <p>Description: </p><p th:text="${candle.description}">DESCRIPTION</p>
+        <p>Available: </p><p th:text="${candle.quantity}">DESCRIPTION</p>
+        <p>Price: </p><p th:text="${candle.price}">PRICE</p>
+
+        <br/>
+    </div>
+</div>
+
+</body>
+</html>
